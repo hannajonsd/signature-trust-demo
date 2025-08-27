@@ -22,7 +22,7 @@ jobs:
           fi
 
       - name: Verify Signatures
-        uses: ICL-ml4csec/signature-trust@feature/better-handling
+        uses: ICL-ml4csec/signature-trust@v1.0.1
         with:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
