@@ -1,0 +1,2 @@
+requests==2.31.0
+pjsua2==2.13
