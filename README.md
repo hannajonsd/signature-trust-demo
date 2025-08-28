@@ -1,5 +1,3 @@
-# Signature Trust Demo
+# Python Audio Processing Demo
 
-Demo repository for signature verification workflows.
-
-This repository demonstrates signature verification across different programming languages and dependency scenarios.
+Uses PJSIP for audio processing.
