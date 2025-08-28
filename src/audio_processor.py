@@ -15,4 +15,4 @@ class SecureAudioProcessor:
     def process_audio(self, input_file):
         print(f"Securely processing {input_file}")
         file_hash = self.hash_audio_metadata(input_file)
-        return file_hash
+        return file_hash 
