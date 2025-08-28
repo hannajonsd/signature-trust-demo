@@ -1,0 +1,44 @@
+name: Strict Signature Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  strict-security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set branch name
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
+          else
+            echo "BRANCH_NAME=${{ github.ref_name }}" >> $GITHUB_ENV
+          fi
+
+      - name: Strict Security Check
+        uses: ICL-ml4csec/signature-trust@v1.1.0
+        with:
+          repository: ${{ github.repository }}
+          branch: ${{ env.BRANCH_NAME }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          time-range: "6 months"
+          key-age-period: "1 month"
+          repo-policy: "false:false:false:false:true:false:false"
+          deps-policy: "false:false:false:false:true:false:false"
+          output-format: "json"
+          output-file: "strict-security-report.json"
+
+      - name: Upload Strict Security Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: strict-security-report-${{ github.sha }}
+          path: strict-security-report.json
+          retention-days: 30
