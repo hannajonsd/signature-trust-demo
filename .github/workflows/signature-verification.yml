@@ -22,7 +22,7 @@ jobs:
           fi
 
       - name: Basic Security Check
-        uses: ICL-ml4csec/signature-trust@development
+        uses: ICL-ml4csec/signature-trust@v1.1.1
         with:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
