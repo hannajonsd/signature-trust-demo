@@ -22,10 +22,11 @@ jobs:
           fi
 
       - name: Basic Security Check
-        uses: ICL-ml4csec/signature-trust@v1.1.0
+        uses: ICL-ml4csec/signature-trust@development
         with:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          time-range: "6 months"
           repo-policy: "true:true:true:true:true:false:false"
           deps-policy: "true:true:true:true:true:false:false"
