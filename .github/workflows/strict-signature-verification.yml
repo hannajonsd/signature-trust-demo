@@ -28,7 +28,7 @@ jobs:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          time-range: "6 months"
+          time-range: "2 weeks"
           key-age-period: "1 month"
           repo-policy: "false:false:false:false:true:false:false"
           deps-policy: "false:false:false:false:true:false:false"
