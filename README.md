@@ -1,3 +1,3 @@
-# Python Audio Processing Demo
+# Python Secure Processing Demo
 
-Uses PJSIP for audio processing.
+Uses bcrypt for cryptographic operations and secure data handling.
