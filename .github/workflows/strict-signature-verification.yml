@@ -23,7 +23,7 @@ jobs:
           fi
 
       - name: Strict Security Check
-        uses: ICL-ml4csec/signature-trust@v1.1.1
+        uses: ICL-ml4csec/signature-trust@v1.1.2
         with:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
