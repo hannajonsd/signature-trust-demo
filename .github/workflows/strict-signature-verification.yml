@@ -28,6 +28,7 @@ jobs:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          commits-to-check: "100"
           time-range: "2 weeks"
           key-age-period: "1 month"
           repo-policy: "false:false:false:false:true:false:false"

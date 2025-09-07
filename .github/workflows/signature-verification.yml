@@ -27,7 +27,15 @@ jobs:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          time-range: "6 months"
+          time-range: "2 months"
           repo-policy: "false:false:true:false:true:false:true"
           deps-policy: "true:true:true:false:true:false:false"
-          output-format: "console"
+          output-format: "json"
+          output-file: "security-report.json"
+
+      - name: Upload Security Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: signature-verification-report
+          path: signature-report.json
