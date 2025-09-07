@@ -30,7 +30,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commits-to-check: "100"
           time-range: "2 weeks"
-          key-age-period: "1 month"
+          key-age-period: "1 year"
           repo-policy: "false:false:false:false:true:false:false"
           deps-policy: "false:false:false:false:true:false:false"
           output-format: "json"
