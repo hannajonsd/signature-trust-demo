@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -13,6 +12,4 @@ func main() {
 		w.Write([]byte("OK"))
 	})
 	http.ListenAndServe(":8080", r)
-
-	fmt.Print("Hello world")
 }
