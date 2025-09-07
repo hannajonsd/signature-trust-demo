@@ -27,14 +27,8 @@ jobs:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          commits-to-check: "all"
           time-range: "9 months"
-          output-format: "console"
           repo-policy: "false:false:true:false:true:false:true"
           deps-policy: "true:true:true:false:true:false:false"
-
-      - name: Upload verification report
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: signature-verification-report
-          path: signature-report.json
+          output-format: "console"
