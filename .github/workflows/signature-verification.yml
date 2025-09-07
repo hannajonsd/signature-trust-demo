@@ -27,8 +27,12 @@ jobs:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          commits-to-check: 20
+          time-range: ""
           repo-policy: "false:false:true:false:true:false:true"
           deps-policy: "true:true:true:false:true:false:false"
+          output-format: "json"
+          output-file: "signature-report.json"
 
       - name: Upload verification report
         if: always()
