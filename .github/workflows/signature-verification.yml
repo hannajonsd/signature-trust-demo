@@ -38,4 +38,4 @@ jobs:
         if: always()
         with:
           name: signature-verification-report
-          path: signature-report.json
+          path: signature-verification.json
