@@ -16,3 +16,4 @@ class SecureAudioProcessor:
         print(f"Securely processing {input_file}")
         file_hash = self.hash_audio_metadata(input_file)
         return file_hash 
+    # comment
