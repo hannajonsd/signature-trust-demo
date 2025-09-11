@@ -22,7 +22,7 @@ jobs:
           fi
 
       - name: Basic Security Check
-        uses: ICL-ml4csec/signature-trust@v1.1.2
+        uses: ICL-ml4csec/signature-trust@v1.1.6
         with:
           repository: ${{ github.repository }}
           branch: ${{ env.BRANCH_NAME }}
@@ -32,11 +32,11 @@ jobs:
           repo-policy: "false:false:true:false:true:false:true"
           deps-policy: "true:true:true:false:true:false:false"
           output-format: "json"
-          output-file: "signature-report.json"
+          output-file: "security-report.json"
 
-      - name: Upload verification report
+      - name: Upload Basic Security Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: signature-verification-report
-          path: signature-report.json
+          name: security-report
+          path: security-report.json
